@@ -55,3 +55,14 @@ def process_results(sources_list):
         sources_results.append(sources_object)
 
     return sources_results
+def get_article(id):
+    get_article_url = article_url.format(id, api_key)
+
+    with urllib.request.urlopen(get_article_url) as url:
+        article_results = json.loads(url.read())
+        article_object = None
+        # print(article_results)
+        if article_results['articles']:
+            article_object = process_article(article_results['articles'])
+
+    return article_object
