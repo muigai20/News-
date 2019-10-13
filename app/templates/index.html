@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="static/css/styles.css">
+  </head>
+  <body>
+    {% extends 'base.html' %}
+     {% import 'macros.html' as macro %}
+
+
+     {% block content %}
+     <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+
+         <h1>Technology World</h1>
+        <ul>
+          {{macro.displaySourcesList(technology)}}
+
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Sports Arena</h1>
+        <ul>
+          {{macro.displaySourcesList(sports)}}
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Entertainment</h1>
+        <ul>
+          {{macro.displaySourcesList(entertainment)}}
+        </ul>
+      </div>
+    </div>
+    </div>
+    {% endblock %}
+
+  </body>
+</html>
